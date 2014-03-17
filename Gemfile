@@ -6,6 +6,7 @@ gem 'rails', '4.0.4'
 # production
 group :production do
     gem 'pg'
+    gem 'rails_12factor'
 end
 
 # development
@@ -41,6 +42,7 @@ group :doc do
 end
 
 gem 'atomic', '1.1.14'
+gem 'sprockets_better_errors'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
