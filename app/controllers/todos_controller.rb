@@ -5,11 +5,16 @@ class TodosController < ApplicationController
 
     def create
         @todo = Todo.new(todo_params)
-        @todo.save
-        redirect_to @todo
+        if @todo.save
+          redirect_to @todo, notice: 'Your new TODO was saved'
+        else
+          flash[:error] = "There was an error saving your TODO"
+          render :new
+        end
     end
 
     def show
+        @todo = Todo.find params[:id]
     end
 
     private
