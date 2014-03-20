@@ -6,7 +6,7 @@ class TodosController < ApplicationController
     def create
         @todo = Todo.new(todo_params)
         if @todo.save
-          redirect_to @todo, notice: 'Your new TODO was saved'
+          redirect_to todos_path, notice: 'Your new TODO was saved'
         else
           flash[:error] = "There was an error saving your TODO"
           render :new
@@ -15,6 +15,10 @@ class TodosController < ApplicationController
 
     def show
         @todo = Todo.find params[:id]
+    end
+
+    def index
+        @todos = Todo.all
     end
 
     private
