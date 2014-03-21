@@ -1,5 +1,26 @@
 <h1>My List</h1>
 
-<% @todos.each do |todo| %>
-  <%= todo.description %>
-<% end %>
+<div class="container-fluid">
+<table class="table table-hover table-bordered table-condensed">
+ <thead>
+  <tr>
+    <th class="col-sm-3 text-center">Description</th>
+    <th class="col-sm-1 text-center">Days left</th>
+    <th class="col-sm-1 text-center">Complete</th>
+  <tr/>
+ </thead>
+  <% @todos.each do |todo| %>
+ <tbody>
+  <tr>
+    <td>
+      <%= todo.description %>
+    </td>
+  </tr>
+ </tbody>
+  <% end %>
+</table>
+</div>
+
+<div class="text-center">
+  <%= link_to "Create a new todo", new_todo_path %>
+</div>
