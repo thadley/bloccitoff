@@ -5,7 +5,7 @@ class TodosController < ApplicationController
     end
 
     def create
-        @todo = Todo.new(todo_params)
+        @todo = current_user.todos.build(todo_params)
         authorize @todo
         if @todo.save
           redirect_to todos_path, notice: 'Your new TODO was saved'
@@ -21,7 +21,7 @@ class TodosController < ApplicationController
     end
 
     def index
-        @todos = Todo.all
+        @todos = current_user.todos
         authorize @todos
     end
 
