@@ -1,10 +1,12 @@
 class TodosController < ApplicationController
     def new
         @todo = Todo.new
+        authorize @todo
     end
 
     def create
         @todo = Todo.new(todo_params)
+        authorize @todo
         if @todo.save
           redirect_to todos_path, notice: 'Your new TODO was saved'
         else
@@ -15,10 +17,12 @@ class TodosController < ApplicationController
 
     def show
         @todo = Todo.find params[:id]
+        authorize @todo
     end
 
     def index
         @todos = Todo.all
+        authorize @todos
     end
 
     private
