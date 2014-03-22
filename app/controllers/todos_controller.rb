@@ -25,9 +25,21 @@ class TodosController < ApplicationController
         authorize @todos
     end
 
+    # def destroy
+    #     @todo = Todo.find(params[:id])
+    #     authorize @todo
+    #     if @todo.destroy
+    #       flash[:notice] = "Todo is complete!"
+    #       redirect_to todos_path
+    #     else
+    #       flash[:error] = "There was an error."
+    #       render :show
+    #     end
+    # end
+
     private
 
     def todo_params
-        params.require(:todo).permit(:description)
+        params.require(:todo).permit(:description, :time_left)
     end
 end

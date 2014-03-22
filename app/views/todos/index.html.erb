@@ -12,9 +12,10 @@
   <% @todos.each do |todo| %>
  <tbody>
   <tr>
-    <td>
-      <%= todo.description %>
-    </td>
+    <td><%= todo.description %></td>
+    <% time_left = (604800 - (Time.now - todo.created_at)) / 86400 %>
+    <td class= "text-center"><%= time_left.round(1) %></td>
+    <td class="text-center"><input type="checkbox"></td>
   </tr>
  </tbody>
   <% end %>
