@@ -17,9 +17,7 @@
     <% time_left = (604800 - (Time.now - todo.created_at)) / 86400 %>
     <td class= "text-center"><%= time_left.round(1) %></td>
     <td class="text-center">
-    <% if policy(todo).destroy? %>
-      <%= link_to 'Complete', todo_path(todo), method: :delete, confirm: 'Is this todo complete?' %>
-      <% end %> 
+    <input type="checkbox" onclick="window.location='<%=todo_path(todo)%>';"/>
     </td>
   </tr>
  </tbody>

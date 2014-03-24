@@ -16,9 +16,16 @@ class TodosController < ApplicationController
         end
     end
 
-    def show
-        @todo = Todo.find params[:id]
-        authorize @todo
+    def show    # def destroy in order to use window.controller (that leads to the GET/show view)
+                # and checkbox function in index view (the list)
+        @todo = Todo.find(params[:id])
+
+        if @todo.destroy
+          redirect_to todos_path, notice: "Todo is complete!"
+        else
+          flash[:error] = "There was an error."
+          render :index
+        end
     end
 
     def index

@@ -15,3 +15,14 @@
 //= require turbolinks
 //= require bootstrap
 //= require_tree .
+
+function delete_todo(url)
+$.ajax({
+    type: "DELETE",
+    url: url
+    success: function(msg){
+        // for debugging
+        alert("Data Deleted: " + msg);
+    }
+});
+}
