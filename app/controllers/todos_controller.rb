@@ -1,4 +1,5 @@
 class TodosController < ApplicationController
+
     def new
         @todo = Todo.new
         authorize @todo
@@ -8,9 +9,9 @@ class TodosController < ApplicationController
         @todo = current_user.todos.build(todo_params)
         authorize @todo
         if @todo.save
-          redirect_to todos_path, notice: 'Your new TODO was saved'
+          redirect_to todos_path, notice: 'Your new todo was saved'
         else
-          flash[:error] = "There was an error saving your TODO"
+          flash[:error] = "There was an error saving your todo"
           render :new
         end
     end
@@ -25,17 +26,20 @@ class TodosController < ApplicationController
         authorize @todos
     end
 
-    # def destroy
-    #     @todo = Todo.find(params[:id])
-    #     authorize @todo
-    #     if @todo.destroy
-    #       flash[:notice] = "Todo is complete!"
-    #       redirect_to todos_path
-    #     else
-    #       flash[:error] = "There was an error."
-    #       render :show
-    #     end
-    # end
+    def destroy
+        @todo = Todo.find(params[:id])
+
+        if @todo.destroy
+          redirect_to todos_path, notice: "Todo is complete!"
+        else
+          flash[:error] = "There was an error."
+          render :index
+        end
+
+        # respond_with(@todo) do |f|
+        #     f.html { redirect_to todos_path}
+        # end
+    end
 
     private
 

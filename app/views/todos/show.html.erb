@@ -1,1 +1,2 @@
 <p><b><%= @todo.description %></b></p>
+<%= link_to "Delete", action: 'destroy', method: :delete, remote: true %>
