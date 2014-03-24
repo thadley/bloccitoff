@@ -1,1 +1,3 @@
-<p><b><%= @todo.description %></b></p>
+<!-- <p><b><%= @todo.description %></b></p> -->
+<%= @todo.destroy %>
+<% redirect_to todos_path %>

@@ -3,8 +3,8 @@
 # feature 'PM checks todo as complete' do
 #     scenario 'Successfully' do
 #         visit todos_path
-#         check('A Checkbox')
-# #         # 
+# #       check('A Checkbox')
+#         click_link 'Delete'
 # #         # expect( page ).to have_content('Your todo is complete!')
 #     end
 # end

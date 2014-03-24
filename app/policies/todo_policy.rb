@@ -4,8 +4,13 @@ class TodoPolicy < ApplicationPolicy
         true
     end
 
-    # def destroy?
-    #     user.present? && (record.user == user)
-    # end
+    def show?
+        user.present? && (record.user == user)
+    end
+
+
+    def destroy?
+        user.present? && (record.user == user)
+    end
     
 end
