@@ -23,8 +23,15 @@ require 'faker'
     # set the created_at to a time within the past week
     todo.update_attribute(:created_at, Time.now - rand(600..606461))
   end
-end
 
+    2.times do
+    todo = Todo.create(
+      user: user,
+      description: Faker::Lorem.sentence)
+    # set the created_at to a time greater than week
+    todo.update_attribute(:created_at, Time.now - rand(604800..606461))
+  end
+end
 
 user = User.first
 user.skip_reconfirmation!
