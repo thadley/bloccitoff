@@ -1,7 +1,7 @@
-<h1 class="text-center">My List</h1>
+
 
 <div class="container-fluid">
-<table class="table table-hover table-bordered table-condensed">
+<table class= "table table-hover" align="center">
  <thead>
   <tr>
     <th class="col-sm-3 text-center"> Description <span class="glyphicon glyphicon-pencil"></span></th>
@@ -17,7 +17,8 @@
     <% time_left = (604800 - (Time.now - todo.created_at)) / 86400 %>
     <td class= "text-center"><%= time_left.round(1) %></td>
     <td class="text-center">
-    <input type="checkbox" onclick="window.location='<%=todo_path(todo)%>';"/>
+    <!-- <input type="checkbox" onclick="window.location='<%=todo_path(todo)%>';"/> -->
+    <input type="checkbox" onclick="delete_todo('<%=todo_path(todo)%>',this)"/>
     </td>
   </tr>
  </tbody>
