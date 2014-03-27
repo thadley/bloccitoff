@@ -80,4 +80,5 @@ Bloccitoff::Application.configure do
 
   # http://trisha-bloccitoff.herokuapp.com
   config.action_mailer.default_url_options = { host: 'trisha-bloccitoff.herokuapp.com' }
+  config.assets.initialize_on_precompile = false
 end
