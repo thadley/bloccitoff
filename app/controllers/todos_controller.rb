@@ -20,12 +20,12 @@ class TodosController < ApplicationController
                 # and checkbox function in index view (the list)
         @todo = Todo.find(params[:id])
 
-        if @todo.destroy
-          redirect_to todos_path, notice: "Todo is complete!"
-        else
-          flash[:error] = "There was an error."
-          render :index
-        end
+        # if @todo.destroy
+        #   redirect_to todos_path, notice: "Todo is complete!"
+        # else
+        #   flash[:error] = "There was an error."
+        #   render :index
+        # end
     end
 
     def index
@@ -37,7 +37,7 @@ class TodosController < ApplicationController
         @todo = Todo.find(params[:id])
 
         if @todo.destroy
-          redirect_to todos_path, notice: "Todo is complete!"
+          render :text => "OK"
         else
           flash[:error] = "There was an error."
           render :index
