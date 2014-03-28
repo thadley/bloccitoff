@@ -16,13 +16,15 @@
 //= require bootstrap
 //= require_tree .
 
-function delete_todo(url)
-$.ajax({
-    type: "DELETE",
-    url: url
-    success: function(msg){
-        // for debugging
-        alert("Data Deleted: " + msg);
+function delete_todo(url,element){
+if(confirm("Is this todo complete?")){
+    $.ajax({
+        type: "DELETE",
+        url: url,
+        success: function(msg){
+            // for debugging
+            $(element).closest('tr').remove();
+        }
+    });
     }
-});
 }

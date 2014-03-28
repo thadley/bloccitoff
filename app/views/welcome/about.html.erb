@@ -1,6 +1,6 @@
-<div class="jumbotron", align=center>
+<center><div class="jumbotron", align=center>
   <div class="container">
-  <h1>Bloccitoff</h1>
+  <h2>Bloccitoff</h2>
   <p>A self-destructing to-do list to keep you focused on what matters most.</p>
   <p>
     <% if current_user %>
@@ -9,8 +9,8 @@
     <span class="glyphicon glyphicon-ok"></span>
     <% else %>
       <%= link_to "Sign In", new_user_session_path, class: 'btn btn-primary' %> or 
-      <%= link_to "Sign Up", new_user_registration_path, class: 'btn btn-primary' %>
+      <%= link_to "Sign Up", new_user_registration_path, class: 'btn btn-info' %>
     <%end%>
   </p>
 </div>
-</div>
+</div></center>
