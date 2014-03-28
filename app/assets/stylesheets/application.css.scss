@@ -24,11 +24,12 @@ body {
   margin-top: 50px;
   color: #1F1C54;
   background-color: #ffffff;
+  border: 2px solid #1F1C54;
 }
 
 .table > thead > tr > th {
   vertical-align: bottom;
-  border-bottom: 3px solid #eeeeee;
+  border-bottom: 2px solid #1F1C54;
 }
 
 .table > tbody + tbody {
