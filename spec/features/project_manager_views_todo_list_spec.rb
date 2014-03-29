@@ -1,11 +1,20 @@
 require 'spec_helper'
 
+include Warden::Test::Helpers
+Warden.test_mode!
+
+user = FactoryGirl.create(:user)
+user.confirmed_at = Time.now
+user.save
+
 feature 'Views TODO list' do
     scenario 'Successfully' do
+       login_as(user, :scope => :user)
        visit todos_path
-       expect( page ).to have_content('My List')
+       expect( page ).to have_content('Days left')
     end
 end
 
-# Goes to the todo list
-# Views all todos on 'My List'
+Warden.test_reset!
+
+# PM signs in and goes to todo page
