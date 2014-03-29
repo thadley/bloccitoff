@@ -22,7 +22,9 @@ if(confirm("Is this todo complete?")){
         type: "DELETE",
         url: url,
         success: function(msg){
-            // for debugging
+            var current_count = $('#total_todos').text();
+            var new_count = parseInt(current_count, 10) - 1;
+            $('#total_todos').text(new_count);
             $(element).closest('tr').remove();
         }
     });
