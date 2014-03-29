@@ -12,7 +12,7 @@
           <% if current_user %>
             <li><%= link_to "Home", welcome_about_path %></li>
             <li><%= link_to "Todos", todos_path %></li>
-            <span class="badge"><%= current_user.todos.count %></span>
+            <span class="badge" id="total_todos"><%= current_user.todos.count %></span>
           <% else %>
             <li><%= link_to "Home", welcome_about_path %></li>
           <% end %>
