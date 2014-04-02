@@ -29,4 +29,7 @@ if(confirm("Is this todo complete?")){
         }
     });
     }
+else{
+    $(element).prop('checked',false);
+}
 }

@@ -33,7 +33,7 @@ class TodosController < ApplicationController
         @todo = Todo.find(params[:id])
 
         if @todo.destroy
-          render :text => "OK"
+          render :text => "Your todo is complete!"
         else
           flash[:error] = "There was an error."
           render :index

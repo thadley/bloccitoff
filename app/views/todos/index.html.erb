@@ -18,7 +18,7 @@
     <td class= "text-center"><%= time_left.round(1) %></td>
     <td class="text-center">
     <!-- <input type="checkbox" onclick="window.location='<%=todo_path(todo)%>';"/> -->
-    <input type="checkbox" onclick="delete_todo('<%=todo_path(todo)%>',this)"/>
+    <input class="todoCheckbox" type="checkbox" onclick="delete_todo('<%=todo_path(todo)%>',this)"/>
     </td>
   </tr>
  </tbody>
