@@ -19,6 +19,9 @@ end
 
 Warden.test_reset!
 
-# PM signs in 
-# Automatically routes to todo page
-# PM navigates to home page
+# Feature: PM views home page
+
+# Scenario: Successfully
+#   PM signs in 
+#   Automatically routes to todo page
+#   PM navigates to home page

@@ -8,9 +8,12 @@ user.confirmed_at = Time.now
 user.save
 
 feature 'Project manager creates todo' do
-    scenario 'Successfully' do
+    before :each do
         login_as(user, :scope => :user)
         visit new_todo_path
+    end
+
+    scenario 'Successfully' do
         fill_in 'Description', with: 'Meet up with the team'
         click_button 'Save'
         expect( page ).to have_content('Your new todo was saved')
@@ -18,8 +21,6 @@ feature 'Project manager creates todo' do
     end
 
     scenario 'with description missing' do
-        login_as(user, :scope => :user)
-        visit new_todo_path
         fill_in 'Description', with: ''
         click_button 'Save'
         expect( page ).to have_content('There was an error saving your todo')
@@ -28,14 +29,15 @@ end
 
 Warden.test_reset!
 
-# Scenario: creating a TODO
+# Feature: Creating a todo
 
+# Scenario: Successfully
 #   PM goes to the TODO creation page
 #   PM submits new TODO description
 #   PM sees confirmation message
 #   PM sees newly saved TODO
 
-# Scenario: creates todo with description missing
+# Scenario: with description missing
 #   Goes to the TODO creation page
 #   Submits a new TODO without description
 #   Sees an error message
