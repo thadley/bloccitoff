@@ -21,7 +21,7 @@ group :development, :test do
     gem 'factory_girl_rails', '~> 4.3.0'
 #   gem 'database_cleaner', '~> 1.2.0'
     gem 'capybara-screenshot'
-#   gem 'selenium-webdriver'
+    gem 'selenium-webdriver'
 end
 
 # Use SCSS for stylesheets
