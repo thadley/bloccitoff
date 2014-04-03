@@ -1,3 +1,3 @@
-every 5.minutes do
+every 1.hour do
   rake 'delete_todos'
 end

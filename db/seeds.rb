@@ -42,7 +42,15 @@ user.update_attributes(email: 'trisha.hadley@gmail.com', password: 'helloworld',
       user: user,
       description: Faker::Lorem.sentence)
     # set the created_at to a time greater than week
-    todo.update_attribute(:created_at, Time.now - rand(604800..606461))
+    todo.update_attribute(:created_at, rand(7..9).days.ago)
+  end
+
+  5.times do
+    todo = Todo.create(
+      user: user,
+      description: Faker::Lorem.sentence)
+    # set the created_at to a time within the past week
+    todo.update_attribute(:created_at, Time.now - rand(600..606461))
   end
 
 puts "Seed finished"
