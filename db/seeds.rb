@@ -37,6 +37,14 @@ user = User.first
 user.skip_reconfirmation!
 user.update_attributes(email: 'trisha.hadley@gmail.com', password: 'helloworld', password_confirmation: 'helloworld')
 
+  2.times do
+    todo = Todo.create(
+      user: user,
+      description: Faker::Lorem.sentence)
+    # set the created_at to a time greater than week
+    todo.update_attribute(:created_at, Time.now - rand(604800..606461))
+  end
+
 puts "Seed finished"
 puts "#{User.count} users created"
 puts "#{Todo.count} todos created"

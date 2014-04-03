@@ -1,5 +1,3 @@
-
-# every 1.day, :at => '5am' do
-every 1.hour do
-  rake "auto_delete"
+every 5.minutes do
+  rake 'delete_todos'
 end
