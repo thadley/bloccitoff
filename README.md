@@ -1,6 +1,6 @@
 ## Bloccitoff: a self-destructing to-do list application to practice web development and Rails 4.
 
-http://trisha-bloccitoff.herokuapp.com/
+[Production URL](http://trisha-bloccitoff.herokuapp.com/)
 
 Made with my mentor at [Bloc](http://bloc.io).
 
