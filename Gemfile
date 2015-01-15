@@ -16,7 +16,7 @@ group :development do
 end
 
 group :development, :test do
-    gem 'rspec-rails'
+    gem 'rspec-rails', '~>3.0'
     gem 'capybara'
     gem 'factory_girl_rails', '~> 4.3.0'
 #   gem 'database_cleaner', '~> 1.2.0'
@@ -72,3 +72,7 @@ gem 'newrelic_rpm'
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+
+# ambient_spec test for code club
+gem 'ambient_spec'
+
